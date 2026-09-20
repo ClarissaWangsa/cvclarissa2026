@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clarissa Wangsa — Project Manager &amp; Creative Lead</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #2f59e0;
+      --yellow: #ffe56a;
+      --pink: #f7b7cc;
+      --pink-bg: #ffe9f1;
+      --pink-ink: #c45d8a;
+      --ink: #243048;
+      --muted: #66748c;
+      --paper: #eef1f8;
+    }
+
+    @page { size: A4 portrait; margin: 0; }
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      background: #d7ddea;
+      color: var(--ink);
+      font-family: Outfit, "Segoe UI", Arial, Helvetica, sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--blue); }
+
+    .cv-page {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      margin: 18px auto;
+      padding: 8mm 13mm 14mm;
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .cv-page::after {
+      content: "CLARISSA";
+      position: absolute;
+      right: -4mm;
+      top: 86mm;
+      color: rgba(47, 89, 224, 0.07);
+      font-size: 38mm;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      pointer-events: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 62mm 1fr;
+      gap: 7mm;
+      align-items: center;
+      margin-bottom: 5mm;
+      padding-bottom: 4.5mm;
+      border-bottom: 0.7mm solid var(--blue);
+    }
+
+    .photo-wrap {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 60mm;
+      height: 60mm;
+    }
+
+    .ring {
+      position: absolute;
+      inset: 0;
+    }
+
+    .ring text {
+      fill: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .photo-wrap img {
+      position: relative;
+      z-index: 1;
+      width: 39mm;
+      height: 39mm;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: 50%;
+    }
+
+    .small-name {
+      margin: 0;
+      color: #8b96ad;
+      font-size: 10.5pt;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 1.4mm 0 3.2mm;
+      color: var(--blue);
+      font-size: 26pt;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .bio p {
+      margin: 0 0 2.4mm;
+      color: var(--ink);
+      font-size: 9.1pt;
+      line-height: 1.48;
+      letter-spacing: 0.01em;
+    }
+
+    .bio p:last-child { margin-bottom: 0; }
+
+    mark {
+      background: var(--yellow);
+      color: inherit;
+      padding: 0 1.2mm;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .body-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.12fr;
+      gap: 9mm;
+    }
+
+    .right-col {
+      padding-left: 8mm;
+      border-left: 0.35mm solid #cfd7ea;
+    }
+
+    h2 {
+      margin: 0 0 3mm;
+      color: var(--blue);
+      font-size: 14pt;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+
+    .left section + section,
+    .right-col section + section { margin-top: 3.2mm; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.6mm 4mm;
+    }
+
+    .contact-grid span {
+      display: block;
+      margin-bottom: 0.4mm;
+      color: var(--blue);
+      font-size: 7.6pt;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .contact-grid p,
+    .job p {
+      margin: 0.4mm 0 0;
+      font-size: 9pt;
+      line-height: 1.48;
+      letter-spacing: 0.01em;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2mm;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pills li {
+      list-style: none;
+      padding: 1.4mm 3mm;
+      border: 0.28mm solid #c9b8ef;
+      border-radius: 10mm;
+      background: #f4efff;
+      color: var(--blue);
+      font-size: 7.8pt;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    .pills.pink li {
+      border-color: var(--pink);
+      background: var(--pink-bg);
+      color: var(--pink-ink);
+    }
+
+    .edu-item { margin: 0 0 1.2mm; }
+    .edu-item strong { display: block; color: var(--blue); font-size: 9.4pt; letter-spacing: 0.01em; line-height: 1.3; }
+    .edu-item span { color: var(--muted); font-size: 8.4pt; letter-spacing: 0.02em; }
+
+    .timeline {
+      position: relative;
+      margin: 0;
+      padding: 0 0 0 6mm;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 2.2mm;
+      bottom: 2mm;
+      left: 1.15mm;
+      width: 0.55mm;
+      background: var(--blue);
+    }
+
+    .job {
+      position: relative;
+      margin: 0 0 2.4mm;
+    }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      top: 1.1mm;
+      left: -6mm;
+      width: 3.1mm;
+      height: 3.1mm;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 1.3mm var(--paper);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 10.3pt;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .job .role {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .job .dates {
+      margin: 0.4mm 0 1.2mm;
+      color: var(--muted);
+      font-size: 8pt;
+      letter-spacing: 0.02em;
+    }
+
+    .job p { color: var(--ink); }
+
+    .job-points {
+      margin: 1mm 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .job-points li {
+      position: relative;
+      margin: 0 0 0.5mm;
+      padding-left: 4.2mm;
+      color: var(--ink);
+      font-size: 7.8pt;
+      line-height: 1.32;
+      letter-spacing: 0.01em;
+      list-style: none;
+    }
+
+    .job-points li::before {
+      content: "";
+      position: absolute;
+      left: 0.3mm;
+      top: 1.05mm;
+      width: 1.45mm;
+      height: 1.45mm;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .job .clients-line {
+      margin: 1mm 0 0;
+      color: var(--muted);
+      font-size: 7.6pt;
+      line-height: 1.35;
+    }
+
+    .earlier {
+      margin: 0;
+      color: var(--muted);
+      font-size: 8pt;
+      line-height: 1.5;
+      letter-spacing: 0.01em;
+    }
+
+    .project-item {
+      margin: 0 0 2.6mm;
+    }
+
+    .project-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 9.1pt;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      line-height: 1.25;
+    }
+
+    .project-item p {
+      margin: 0.7mm 0 0;
+      color: var(--muted);
+      font-size: 8.2pt;
+      line-height: 1.48;
+      letter-spacing: 0.01em;
+    }
+
+    .pills.clients {
+      margin-top: 1mm;
+    }
+
+    .label-clients {
+      margin: 0 0 2mm;
+      color: var(--blue);
+      font-size: 7.6pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .pills.clients li {
+      border-color: #f0d36a;
+      background: #fff6cc;
+      color: #8a6a12;
+    }
+
+    @media print {
+      html, body { background: var(--paper); }
+      .cv-page { margin: 0; }
+    }
+
+    @media screen and (max-width: 759px) {
+      body { background: var(--paper); }
+      .cv-page, .hero, .body-grid, .contact-grid {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+      .cv-page { margin: 0; padding: 8mm 7vw 12mm; }
+      .photo-wrap { margin: 0 auto 5mm; }
+      .right-col { padding: 6mm 0 0; border-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <article class="cv-page">
+    <header class="hero">
+      <div class="photo-wrap">
+        <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+          <defs>
+            <path id="circlePath" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"></path>
+          </defs>
+          <text>
+            <textPath href="#circlePath" startOffset="0">PROJECT MANAGER · CREATIVE LEAD · INTERACTIVE EXPERIENCE · </textPath>
+          </text>
+        </svg>
+        <img src="Foto%20Clar/Clarissa%20Wangsa%2011.png" alt="" role="presentation">
+      </div>
+      <section class="identity" aria-labelledby="name-heading">
+        <p class="small-name" id="name-heading">Clarissa Wangsa</p>
+        <h1>Project Manager</h1>
+        <div class="bio">
+          <p>Project manager and creative lead for <mark>interactive brand experiences</mark>. I turn client briefs into campaign ideas, playable concepts, and live activations — from first idea through visual direction and on-ground delivery.</p>
+          <p>I lead cross-functional teams on Roblox worlds, AR, and interactive installations that connect Unity, AI, and digital applications with sensors, projection, and embedded physical interfaces.</p>
+        </div>
+      </section>
+    </header>
+
+    <div class="body-grid">
+      <div class="left">
+        <section aria-labelledby="contact-heading">
+          <h2 id="contact-heading">Contacts</h2>
+          <div class="contact-grid">
+            <p><span>e-mail</span> <a href="mailto:cwangsa08@gmail.com">cwangsa08@gmail.com</a></p>
+            <p><span>WhatsApp</span> <a href="https://wa.me/6282328287171">+62 823 2828 7171</a></p>
+            <p><span>LinkedIn</span> <a href="https://www.linkedin.com/in/clarissa-wangsa">clarissa-wangsa</a></p>
+            <p><span>location</span> Jakarta, Indonesia</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="core-heading">
+          <h2 id="core-heading">Core Skills</h2>
+          <ul class="pills">
+            <li>Project Management</li>
+            <li>Creative &amp; Art Direction</li>
+            <li>Campaign Strategy</li>
+            <li>Concept Development</li>
+            <li>Client Management</li>
+            <li>Team Collaboration</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="other-heading">
+          <h2 id="other-heading">Other Skills</h2>
+          <ul class="pills pink">
+            <li>Adobe Creative Suite</li>
+            <li>Figma</li>
+            <li>Premiere Pro / CapCut</li>
+            <li>Notion &amp; Trello</li>
+            <li>Social Media Tools</li>
+            <li>Google Workspace</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="projects-heading">
+          <h2 id="projects-heading">Highlighted Work</h2>
+          <div class="project-item">
+            <strong>Interactive Games &amp; Installations</strong>
+            <p>Gamification, booth games, and digital–physical activations from concept through live delivery.</p>
+          </div>
+          <div class="project-item">
+            <strong>Roblox Game Development</strong>
+            <p>Branded Roblox worlds with Paddle Pop / PT Magnum, plus ongoing partner and influencer collaborations.</p>
+          </div>
+          <div class="project-item">
+            <strong>Digital Marketing</strong>
+            <p>Social media planning and content, performance analysis, SEO, and paid ads execution for brand campaigns.</p>
+          </div>
+          <p class="label-clients">Selected clients</p>
+          <ul class="pills clients">
+            <li>Paddle Pop</li>
+            <li>BYD</li>
+            <li>Daihatsu</li>
+            <li>Labore</li>
+            <li>Fitbar</li>
+            <li>BCA</li>
+            <li>Wardah</li>
+            <li>Bir Bintang</li>
+            <li>Coca-Cola</li>
+            <li>McDonald’s</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="right-col">
+        <section aria-labelledby="education-heading">
+          <h2 id="education-heading">Education</h2>
+          <div class="edu-item">
+            <strong>Bachelor of Arts | Visual Communication Design</strong>
+            <span>Universitas Bina Nusantara · 2016–2020</span>
+          </div>
+          <div class="edu-item">
+            <strong>Full Stack Digital Marketing</strong>
+            <span>RevoU · 2021–2022</span>
+          </div>
+          <div class="edu-item">
+            <strong>The Fundamentals of Digital Marketing</strong>
+            <span>Google Digital Garage · 2020</span>
+          </div>
+        </section>
+
+        <section aria-labelledby="experience-heading">
+          <h2 id="experience-heading">Experience</h2>
+          <div class="timeline">
+            <article class="job">
+              <h3>Unictive Media</h3>
+              <p class="role">Project Manager · Interactive &amp; Roblox</p>
+              <p class="dates">May 2023–Present</p>
+              <p>Turning ideas into experiences across Roblox, interactive games, and digital activations — from creative concepts to live delivery.</p>
+              <ul class="job-points">
+                <li>Lead end-to-end Roblox, interactive, and tech-driven brand activations with AI, sensors, projection, embedded systems, and installations.</li>
+                <li>Shape concepts for games, AR/filters, video, and immersive installations with creative, design, and production teams.</li>
+              </ul>
+              <p class="clients-line"><strong>Selected clients:</strong> Paddle Pop, Coca-Cola, Skippy, McDonald’s, BCA, Bali Safari, Implora, IBM, and more.</p>
+            </article>
+            <article class="job">
+              <h3>Unictive Media</h3>
+              <p class="role">Digital Marketing Specialist</p>
+              <p class="dates">May 2022–Present</p>
+              <p>Plan social, paid, and SEO work, aligning campaign ideas with visual execution.</p>
+            </article>
+            <article class="job">
+              <h3>iQuartz Pte Ltd, Singapore</h3>
+              <p class="role">Digital Marketing Specialist</p>
+              <p class="dates">Aug 2020–Oct 2024</p>
+              <p>Managed social strategy, visual direction, and reporting — 150+ organic followers in three months.</p>
+            </article>
+            <article class="job">
+              <h3>PT Cahaya Bangunan Baru</h3>
+              <p class="role">Digital Team Lead</p>
+              <p class="dates">Dec 2020–Nov 2021</p>
+              <p>Led digital, design, and e-commerce teams, driving 35% engagement growth in two weeks.</p>
+            </article>
+          </div>
+          <p class="earlier">Also: Digital Marketing Associate at Sinema Malam Minggu; Graphic Designer at VIVORE, Wedding by Renjana, and Bina Nusantara University; Art Director at Leo Burnett, McCann, and GREYnJ UNITED.</p>
+        </section>
+      </div>
+    </div>
+  </article>
+</body>
+</html>
